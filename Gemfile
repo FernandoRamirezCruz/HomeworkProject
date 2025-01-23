@@ -21,6 +21,10 @@ gem "jbuilder"
 
 gem "devise"
 
+gem "image_processing", ">= 1.2"
+
+gem 'activestorage', '~> 7.2', '>= 7.2.1'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -48,7 +52,7 @@ group :development, :test do
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
+  # Use console on exceptions pages [https://github.com/rails/web-copnsole]
   gem "web-console"
 end
 
