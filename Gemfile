@@ -25,6 +25,7 @@ gem "image_processing", ">= 1.2"
 
 gem 'activestorage', '~> 7.2', '>= 7.2.1'
 
+gem "simple_calendar"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
