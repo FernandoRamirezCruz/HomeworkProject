@@ -35,6 +35,11 @@
     <%= form.label :date, style: "display: block" %>
     <%= form.date_field :date %>
   </div>
+  
+  <div class="field">
+  <%= form.label :img %>
+  <%= form.file_field :img, direct_upload: true %>
+ </div>
 
   <div>
     <%= form.submit %>
