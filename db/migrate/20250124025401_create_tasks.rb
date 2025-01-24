@@ -6,7 +6,6 @@ class CreateTasks < ActiveRecord::Migration[7.2]
       t.references :user, null: false, foreign_key: true
       t.references :subject, null: false, foreign_key: true
       t.date :date
-
       t.timestamps
     end
   end
