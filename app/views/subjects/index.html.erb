@@ -4,13 +4,27 @@
 
 <h1>Subjects</h1>
 
-<div id="subjects">
-  <% @subjects.each do |subject| %>
-    <%= render subject %>
-    <p>
-      <%= link_to "Show this subject", subject %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Teacher</th>
+      <th>Schedule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td>
+          <div style="width: 20px; height: 20px; background-color: <%= subject.color %>;"></div>
+        </td>
+        <td><%= subject.teacher %></td>
+        <td><%= subject.schedule %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New subject", new_subject_path %>
