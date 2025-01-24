@@ -19,4 +19,13 @@
     <%= subject.schedule %>
   </p>
 
+  <p><strong>Nombre:</strong> <%= @subject.name %></p>
+  <p><strong>Horario:</strong></p>
+
+  <ul>
+    <% @subject.schedule.each do |day, hours| %>
+      <li><strong><%= day %>:</strong> <%= hours.join(", ") %></li>
+    <% end %>
+  </ul>
+  
 </div>

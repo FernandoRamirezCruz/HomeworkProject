@@ -20,15 +20,57 @@
     <%= form.label :color %>
     <%= form.color_field :color, class: "form-control" %>
   </div>
-  
   <div>
     <%= form.label :teacher, style: "display: block" %>
     <%= form.text_field :teacher %>
   </div>
 
-  <div>
-    <%= form.label :schedule, style: "display: block" %>
-    <%= form.text_field :schedule %>
+  <!-- CONTENEDOR PARA HORARIOS DINÁMICOS (Stimulus) -->
+  <div data-controller="schedule">
+    <h3>Horarios</h3>
+
+    <!-- Donde se añadirán dinámicamente los horarios -->
+    <div id="schedule-container"></div>
+
+    <!-- Botón para añadir un nuevo horario -->
+<button type="button"
+        data-action="schedule#addSchedule"
+        id="nuevo-horario-btn">
+  Nuevo horario
+</button>
+
+    <!-- Campo oculto donde guardaremos el JSON final -->
+    <%= form.hidden_field :schedule, id: "schedule_data" %>
+
+    <!-- Template para clonar cada nuevo horario -->
+    <template id="schedule-template">
+      <div class="schedule-row"
+           style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px;">
+        <label>Día de la semana</label>
+        <select class="day-select" style="margin-right: 10px;">
+          <option value="Lunes">Lunes</option>
+          <option value="Martes">Martes</option>
+          <option value="Miércoles">Miércoles</option>
+          <option value="Jueves">Jueves</option>
+          <option value="Viernes">Viernes</option>
+          <option value="Sábado">Sábado</option>
+          <option value="Domingo">Domingo</option>
+        </select>
+
+        <label>Hora inicio</label>
+        <input type="time" class="start-time" required style="margin-right: 10px;">
+
+        <label>Hora fin</label>
+        <input type="time" class="end-time" required style="margin-right: 10px;">
+
+        <button type="button" class="btn-add" data-action="schedule#saveSchedule">
+          Añadir
+        </button>
+        <button type="button" class="btn-cancel" data-action="schedule#cancelSchedule">
+          Cancelar
+        </button>
+      </div>
+    </template>
   </div>
 
   <div>
