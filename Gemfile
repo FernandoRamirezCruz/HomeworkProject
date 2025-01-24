@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.0"
+gem "rails", "~> 8.0.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
@@ -21,7 +21,7 @@ gem "jbuilder"
 
 gem "devise"
 gem "image_processing", ">= 1.2"
-gem 'activestorage', '~> 7.2', '>= 7.2.1'
+gem 'activestorage', '~> 8.0'
 gem "simple_calendar"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
